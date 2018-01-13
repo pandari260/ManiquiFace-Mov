@@ -6,12 +6,10 @@ Este modulo se encarga de obtener las imagenes de la camara para cualquiera que 
 import cv2
 import Configuracion as Configuracion
 
-
-
-alto = float(Configuracion.leer("ObtenedorDeImagenes","alto"))
-ancho = float(Configuracion.leer("ObtenedorDeImagenes","ancho")) 
 #inicializacion de la camara
 vc = cv2.VideoCapture(0)
+alto = float(Configuracion.leer("ObtenedorDeImagenes","alto"))
+ancho = float(Configuracion.leer("ObtenedorDeImagenes","ancho"))
 vc.set(cv2.CAP_PROP_FRAME_WIDTH, ancho)
 vc.set(cv2.CAP_PROP_FRAME_HEIGHT, alto)
 

@@ -8,14 +8,14 @@ import ConfigParser
 import sys
 
 nombreArchivo = "config.cfg"
-opcion = ""
 cfg = ConfigParser.ConfigParser()  
 
+#actualizar archivo de configuracion
 def update():
     f = open(nombreArchivo, "w")  
     cfg.write(f) 
     f.close()
-    
+
 def nuevaSeccion(nombre):
     cfg.add_section(nombre)
     update()
