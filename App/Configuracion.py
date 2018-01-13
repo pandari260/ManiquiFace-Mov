@@ -1,6 +1,6 @@
 '''
 Created on 13 ene. 2018
-
+Esta clase permite leer y escribir en el archivo de configuracion de cada paquete
 @author: Javi-PC
 '''
 

@@ -5,16 +5,19 @@ Este modulo se encarga de obtener las imagenes de la camara para cualquiera que 
 '''
 import cv2
 import Configuracion as Configuracion
+from cv2 import imshow
 
 #inicializacion de la camara
 vc = cv2.VideoCapture(0)
 alto = float(Configuracion.leer("ObtenedorDeImagenes","alto"))
 ancho = float(Configuracion.leer("ObtenedorDeImagenes","ancho"))
+#definimos el ancho y el alto de la imagen
 vc.set(cv2.CAP_PROP_FRAME_WIDTH, ancho)
 vc.set(cv2.CAP_PROP_FRAME_HEIGHT, alto)
 
-def main():
-    print(ancho)
-    print(alto)
+def obtener():
+    _,imagen = vc.read()
+    return cv2.flip(imagen, 1)#se debe voltear ya que si no sale espejada
 
-main()
+def mostrar(imagen):
+    imshow("TestCam", imagen)
