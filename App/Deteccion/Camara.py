@@ -1,6 +1,6 @@
 '''
 Created on 13 ene. 2018
-Este modulo se encarga de obtener las imagenes de la camara para cualquiera que las necesite
+Este modulo se encarga de tomarFoto las imagenes de la camara para cualquiera que las necesite
 @author: Javi-PC
 '''
 import cv2
@@ -15,7 +15,7 @@ ancho = float(Configuracion.leer("ObtenedorDeImagenes","ancho"))
 vc.set(cv2.CAP_PROP_FRAME_WIDTH, ancho)
 vc.set(cv2.CAP_PROP_FRAME_HEIGHT, alto)
 
-def obtener():
+def tomarFoto():
     _,imagen = vc.read()
     return cv2.flip(imagen, 1)#se debe voltear ya que si no sale espejada
 
