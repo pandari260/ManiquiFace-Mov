@@ -23,3 +23,4 @@ if __name__ == '__main__':
         if waitKey(1) & 0xFF == ord('q'):
             sys.exit()
     
+    

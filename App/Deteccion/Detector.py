@@ -25,8 +25,13 @@ class Detector(object):
             if seEncontro:
                 self.meanshiftTracker = MeanshiftTracker(image, (x,y,w,h))
                 self.meanshiftTracker.identificarBlob()
+                return seEncontro, x,y,w,h
         else:
-            return self.meanshiftTracker.rastrear(image)
+            print("mean")
+            seEncontro,x,y,w,h = self.meanshiftTracker.rastrear(image)
+            if(seEncontro):
+                return seEncontro,x,y,w,h
+        self.meanshiftTracker = None
         return False,0,0,0,0
             
             
