@@ -8,7 +8,7 @@ from Deteccion.MeanshiftTracker import MeanshiftTracker
 
 class Detector(object):
     '''
-    Esta clase se encarga de encontrar y dar seguimiento determinado patros dado por el haar feature pasado en el constructor
+    Esta clase se encarga de encontrar y dar seguimiento determinado patron dado por el haar feature pasado en el constructor
     '''
 
 
@@ -27,7 +27,6 @@ class Detector(object):
                 self.meanshiftTracker.identificarBlob()
                 return seEncontro, x,y,w,h
         else:
-            print("mean")
             seEncontro,x,y,w,h = self.meanshiftTracker.rastrear(image)
             if(seEncontro):
                 return seEncontro,x,y,w,h
