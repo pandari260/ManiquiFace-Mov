@@ -12,9 +12,10 @@ class ComunicadorSerial(object):
     para ello el metovo enviar recive un entero lo combierte a char y lo envia a la placa por el metodo write
     '''
     def __init__(self, params):
-        self.arduino = serial.Serial('COM6', 9600)
-    def enviar(self, dato):
-        toChar =unichr(60)
-        self.arduino.write(bytes(toChar))
+        self.arduino = serial.Serial('/dev/tty.wchusbserial1420', 9600)
+    def enviar(self, eje,dato):
+        print eje+str(dato)
+
+        self.arduino.write(bytes(eje+str(dato)))
 
         

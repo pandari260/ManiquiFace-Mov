@@ -1,5 +1,6 @@
+from Comunicacion import ComunicadorSerial
 limites = {'x' : [90,0,180], 'y' : [90,0,180]}
-
+comunicador = ComunicadorSerial.ComunicadorSerial(3)
 class Cabeza(object):
     
     def girar(self, grados, coordenada, eje):
@@ -16,8 +17,7 @@ class Cabeza(object):
             angulo = sup
         elif(angulo < inf):
             angulo = inf
-    
-        #self.comunicador.enviarDatos(eje+chr(angulo))
+        comunicador.enviar(eje,angulo)
         print("la cabeza" + str(self.id) + " giro al angulo:" + str(angulo) + " en el eje: " + eje)
         return angulo
 
@@ -27,8 +27,7 @@ class Cabeza(object):
         self.posicion = p
         self.girar(0, self.getCalibracion()['x'], 'x')
         self.girar(0, self.getCalibracion()['y'], 'y')
-       
-        
+
         
         
     def getDistanciaHorizontal(self):
